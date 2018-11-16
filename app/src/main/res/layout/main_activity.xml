@@ -1,0 +1,38 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="bicycle"
+            type="com.lihuan.bicycle.model.Bicycle"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.lihuan.bicycle.ui.view.SpeedView
+                android:id="@+id/ShowLocationView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            </com.lihuan.bicycle.ui.view.SpeedView>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/speed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{@string/speed_format(bicycle.speed)}"
+            android:textSize="50sp"
+            >
+        </TextView>
+
+    </RelativeLayout>
+</layout>
