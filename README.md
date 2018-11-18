@@ -26,5 +26,5 @@
   數據輸入來源名稱包括C.class中的 ***TEST_DATA_1_NAME*** 、 ***TEST_DATA_2_NAME*** ，
   以及自己準備的測試空資料 ***TEST_DATA_EMPTY_NAME***
 
-## E.App連結:
-[Markdown](https://drive.google.com/file/d/147g3yp4u2XRqTcGnDPmrOkXK89P7nZuE/view?usp=sharing)
+## E.Apk下載連結:
+[Link](https://drive.google.com/file/d/147g3yp4u2XRqTcGnDPmrOkXK89P7nZuE/view?usp=sharing)
