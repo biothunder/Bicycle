@@ -1,7 +1,7 @@
 # Bicycle
 Bicycle App Demo
 
-A.微調 gyroscope 的方式與介面:
+##A.微調 gyroscope 的方式與介面:
 
   參考陀螺儀提供的 ***X軸旋轉角度*** 與 ***Z軸旋轉角度*** 來做為馬達助力圖形傾斜的角度
 
