@@ -18,5 +18,5 @@ D.接收踩踏 RPM 的介面:
 
 E.將附件中的兩組 sample 數據輸入，產生UI作動:
   可在***ReadJsonDataService.class***中第58行改變數據輸入來源，
-  數據輸入來源名稱包括C.class中的***TEST_DATA_1_NAME***、***TEST_DATA_2_NAME***，
+  數據輸入來源名稱包括C.class中的 ***TEST_DATA_1_NAME***、***TEST_DATA_2_NAME***，
   以及自己準備的測試空資料***TEST_DATA_EMPTY_NAME***
