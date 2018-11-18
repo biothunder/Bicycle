@@ -1,4 +1,3 @@
-# Bicycle
 # Bicycle App Demo
 
 ## A.微調 gyroscope 的方式與介面:
@@ -26,3 +25,6 @@
   可在 ***ReadJsonDataService.class*** 中第58行改變數據輸入來源，
   數據輸入來源名稱包括C.class中的 ***TEST_DATA_1_NAME*** 、 ***TEST_DATA_2_NAME*** ，
   以及自己準備的測試空資料 ***TEST_DATA_EMPTY_NAME***
+
+## E.App連結:
+[Markdown](https://drive.google.com/file/d/147g3yp4u2XRqTcGnDPmrOkXK89P7nZuE/view?usp=sharing)
