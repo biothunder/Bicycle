@@ -13,8 +13,6 @@ import com.lihuan.bicycle.C;
 import com.lihuan.bicycle.interact.ObserveSpeedInteract;
 
 import io.reactivex.Single;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 import static android.util.Half.EPSILON;
 import static java.lang.Math.cos;
@@ -29,15 +27,16 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
     private final MutableLiveData<Float> powerAssisted = new MutableLiveData<>();
     private final MutableLiveData<Float> slope = new MutableLiveData<>();
 
-
     private float timestamp;
     private final float[] deltaRotationVector = new float[4];
     private float[] rotvecOrientValues = new float[3];
+    private float degree = 0.0f;
 
     public MainViewModel(Context context, ObserveSpeedInteract observeSpeedInteract) {
         this.observeSpeedInteract = observeSpeedInteract;
         this.context = context;
 
+        speed.postValue(0.0f);
         observeBicycleState();
     }
 
@@ -47,14 +46,15 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
     }
 
     private void observeSpeed() {
-        this.speed.postValue(0.0f);
-
         observeSpeedInteract
                 .observe()
                 .subscribe(this::onSpeed, this::onError);
     }
 
     private void onSpeed(Float speed){
+        /**
+        * 先用速度之間的差值來做為馬達助力
+        */
         Single.just(speed)
                 .map(powerAssisted -> speed - this.speed.getValue())
                 .subscribe(powerAssisted::postValue, this::onError);
@@ -63,8 +63,6 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
     }
 
     private void registerGyroscopeListener() {
-        slope.postValue(0f);
-
         SensorManager sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(this,
                 sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
@@ -106,9 +104,11 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
         SensorManager.getOrientation(deltaRotationMatrix, rotvecOrientValues);
 
         if (rotvecOrientValues != null) {
-            //使用X軸的旋轉角度做為馬達助力圖形的傾斜角度
-            float degree = (float) Math.toDegrees(rotvecOrientValues[0]);
-            slope.postValue(slope.getValue() + degree);
+            /**
+            * 使用X軸的旋轉角度和Z軸的旋轉角度做為馬達助力圖形傾斜角度的參考依據
+            */
+            degree += (float) Math.toDegrees(rotvecOrientValues[0] + rotvecOrientValues[2]) / 2;
+            slope.postValue(degree);
         }
     }
 

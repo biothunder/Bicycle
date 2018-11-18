@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel = ViewModelProviders.of(this, mainViewModelFactory)
                 .get(MainViewModel.class);
 
-        mainViewModel.speed().observe(this, Bicycle.getInstance()::setSpeed);
-        mainViewModel.powerAssisted().observe(this, Bicycle.getInstance()::setPowerAssisted);
-        mainViewModel.slope().observe(this, Bicycle.getInstance()::setSlope);
+        mainViewModel.speed().observe(this, bicycle::setSpeed);
+        mainViewModel.powerAssisted().observe(this, bicycle::setPowerAssisted);
+        mainViewModel.slope().observe(this, bicycle::setSlope);
     }
 }

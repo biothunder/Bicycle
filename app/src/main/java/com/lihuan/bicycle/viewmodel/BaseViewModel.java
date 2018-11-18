@@ -14,7 +14,6 @@ import io.reactivex.disposables.Disposable;
 public class BaseViewModel extends ViewModel {
 
 	protected final MutableLiveData<ErrorEnvelope> error = new MutableLiveData<>();
-	protected final MutableLiveData<Boolean> progress = new MutableLiveData<>();
 	protected Disposable disposable;
 
 	@Override
@@ -30,10 +29,6 @@ public class BaseViewModel extends ViewModel {
 
 	public LiveData<ErrorEnvelope> error() {
 		return error;
-	}
-
-	public LiveData<Boolean> progress() {
-		return progress;
 	}
 
 	protected void onError(Throwable throwable) {

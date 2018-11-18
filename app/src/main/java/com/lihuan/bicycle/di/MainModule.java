@@ -9,10 +9,6 @@ import com.lihuan.bicycle.viewmodel.MainViewModelFactory;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by user on 2018/10/5.
- */
-
 @Module
 public class MainModule {
     @Provides

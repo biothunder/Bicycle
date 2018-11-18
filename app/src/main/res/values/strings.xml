@@ -2,6 +2,5 @@
     <string name="app_name">Bicycle</string>
 
     <!-- Format -->
-    <string name="speed_format">速度: %.1f</string>
-    <string name="acceleration_format">加速度: %.1f</string>
+    <string name="speed_format">Speed: %.1f</string>
 </resources>

@@ -7,8 +7,6 @@ import com.lihuan.bicycle.repository.BicycleRepositoryType;
 import com.lihuan.bicycle.service.ReadDataService;
 import com.lihuan.bicycle.service.ReadJsonDataService;
 
-import java.io.File;
-
 import javax.inject.Singleton;
 
 import dagger.Module;

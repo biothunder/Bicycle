@@ -20,7 +20,6 @@ import io.reactivex.Observable;
 
 public class ReadJsonDataService implements ReadDataService {
     private final Context context;
-    private Integer period = 600;
 
     public ReadJsonDataService(Context context) {
         this.context = context;
@@ -30,14 +29,16 @@ public class ReadJsonDataService implements ReadDataService {
 
         JSONArray speedJSONArray = getSpeedArray();
 
-        //每過600毫秒發送一次速度的數據
-        return Observable.interval(period, TimeUnit.MILLISECONDS)
+        /**
+         * 每過600毫秒發送一次速度的數據
+         */
+        return Observable.interval(C.PERIOD, TimeUnit.MILLISECONDS)
                 .filter(speed -> speedJSONArray != null)
                 .flatMap(counter -> Observable.fromCallable(() -> {
                     float speed;
-                    if (counter <= speedJSONArray.length()) {
+                    if (counter <= speedJSONArray.length())
                         speed = Float.valueOf(speedJSONArray.get(counter.intValue()).toString());
-                    } else
+                     else
                         speed = Float.valueOf(-1);
 
                     return speed;

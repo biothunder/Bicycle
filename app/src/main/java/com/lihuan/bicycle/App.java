@@ -2,7 +2,6 @@ package com.lihuan.bicycle;
 
 import android.app.Activity;
 import android.app.Application;
-import android.support.multidex.MultiDexApplication;
 
 import com.lihuan.bicycle.di.DaggerAppComponent;
 
@@ -12,9 +11,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
-/**
- * Created by user on 2018/9/28.
- */
 
 public class App extends Application implements HasActivityInjector {
     @Inject

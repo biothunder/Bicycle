@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.lihuan.bicycle.App;
-import com.lihuan.bicycle.model.Bicycle;
 
 import javax.inject.Singleton;
 

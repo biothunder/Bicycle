@@ -1,6 +1,5 @@
 <layout xmlns:tools="http://schemas.android.com/tools">
     <data>
-
         <variable
             name="bicycle"
             type="com.lihuan.bicycle.model.Bicycle"/>
@@ -18,7 +17,7 @@
             android:layout_height="fill_parent">
 
             <com.lihuan.bicycle.ui.view.SpeedView
-                android:id="@+id/ShowLocationView"
+                android:id="@+id/speed_view"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
             </com.lihuan.bicycle.ui.view.SpeedView>
