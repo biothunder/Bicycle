@@ -26,5 +26,10 @@
   數據輸入來源名稱包括C.class中的 ***TEST_DATA_1_NAME*** 、 ***TEST_DATA_2_NAME*** ，
   以及自己準備的測試空資料 ***TEST_DATA_EMPTY_NAME***
 
-## E.Apk下載連結:
-[Link](https://drive.google.com/file/d/147g3yp4u2XRqTcGnDPmrOkXK89P7nZuE/view?usp=sharing)
+## F.Apk下載連結:
+[System.nanoTime](https://drive.google.com/file/d/12dqymCYHva6hG7H8J9LPiuQrufi6Foky/view?usp=sharing)
+[System.currentTimeMillis](https://drive.google.com/file/d/1_sK--wpHzzn_kSNImpcHYo83I_X_GHFz/view?usp=sharing)
+[sensorEvent.timestamp](https://drive.google.com/file/d/1_qseunwAZVurri6X2ecMIFRWSKepFrPM/view?usp=sharing)
+
+## G.影片下載連結:
+[Link](https://drive.google.com/file/d/1z8il0aHg-jFdUGxJHSVGqj-c5txfPKxg/view?usp=sharing)
