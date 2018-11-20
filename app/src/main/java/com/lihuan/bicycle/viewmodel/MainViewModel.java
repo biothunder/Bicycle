@@ -74,8 +74,9 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
      */
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+        long benchmarkTime = System.nanoTime();
         if (timestamp != 0) {
-            final float dT = (System.nanoTime() - timestamp) * C.NS2S;
+            final float dT = (benchmarkTime - timestamp) * C.NS2S;
 
             float axisX = sensorEvent.values[0];
             float axisY = sensorEvent.values[1];
@@ -98,7 +99,7 @@ public class MainViewModel extends BaseViewModel implements SensorEventListener 
             deltaRotationVector[3] = cosThetaOverTwo;
         }
 
-        timestamp = System.nanoTime();
+        timestamp = benchmarkTime;
         float[] deltaRotationMatrix = new float[9];
         SensorManager.getRotationMatrixFromVector(deltaRotationMatrix, deltaRotationVector);
         SensorManager.getOrientation(deltaRotationMatrix, rotvecOrientValues);
